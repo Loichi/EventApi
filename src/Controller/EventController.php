@@ -8,7 +8,6 @@ use DateTimeImmutable;
 use App\Entity\Invitation;
 use App\Repository\UserRepository;
 use App\Repository\EventRepository;
-
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +16,12 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+
+
+
+
+
 
 class EventController extends AbstractController
 {
