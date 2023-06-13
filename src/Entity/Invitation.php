@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
-use ORM\JoinColumn;
+
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\InvitationRepository;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: InvitationRepository::class)]
+#[ApiResource]
 class Invitation
 {
     #[ORM\Id]

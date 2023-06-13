@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
-use DateTime;
+
 use App\Entity\User;
 use DateTimeImmutable;
 use App\Repository\UserRepository;
+
 use App\Repository\InvitationRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,6 +16,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+
 
 class UserController extends AbstractController
 {
@@ -31,7 +34,6 @@ class UserController extends AbstractController
     }
 
 
-    //FIND
     #[Route('/user', name: 'userList', methods: ['GET'])]
     public function getUserList(): JsonResponse
     {
@@ -66,25 +68,25 @@ class UserController extends AbstractController
     {
         // Récupérer les événements organisés par l'utilisateur
         $eventsOrganized = $user->getEventsOrganized();
-    
+
         // Supprimer les événements organisés par l'utilisateur
         foreach ($eventsOrganized as $event) {
             $this->em->remove($event);
         }
-    
+
         // Supprimer les invitations reçues par l'utilisateur
         $receivedInvitations = $invitationRepository->findBy(['invitee' => $user]);
         foreach ($receivedInvitations as $invitation) {
             $this->em->remove($invitation);
         }
-    
+
         // Supprimer l'utilisateur
         $this->em->remove($user);
         $this->em->flush();
-    
+
         return new JsonResponse(null, Response::HTTP_NO_CONTENT);
     }
-    
+
 
 
     //CREATE

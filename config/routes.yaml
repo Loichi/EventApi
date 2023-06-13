@@ -1,5 +1,9 @@
+# config/routes.yaml
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource: "../src/Controller/"
+  type: attribute
+  prefix: /
+app.swagger_ui:
+  path: /api/doc
+  methods: GET
+  defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
