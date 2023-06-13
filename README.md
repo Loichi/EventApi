@@ -1,5 +1,5 @@
 # EventApi
-Une Api de création d'évènement et gestion d'invitation
+Une Api de création d'évènement et gestion d'invitation , Réaliser avec Symfony.
 
 # Prérequis
 PHP (version 8.2.0)<br>
@@ -13,7 +13,8 @@ Installer les dépendances : composer install<br>
 Configurer les paramètres de base de données dans le fichier .env<br>
 Créer la base de données : php bin/console doctrine:database:create<br>
 Exécuter les migrations : php bin/console doctrine:migrations:migrate<br>
-Démarrer le serveur de développement : php bin/console server:run<br>
+Démarrer le serveur de développement : symfony:serve<br>
+
 
 # Documentation
 La documentation complète de l'API est disponible à l'adresse suivante :<br>
