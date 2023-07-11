@@ -1,5 +1,5 @@
 # EventApi
-Une Api de création d'évènement et gestion d'invitation , Réaliser avec Symfony.
+Une Api de création d'évènement et gestion d'invitation , Réalisé avec Symfony.
 
 # Prérequis
 PHP (version 8.2.0)<br>
